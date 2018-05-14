@@ -64,6 +64,8 @@ resolveConfig.resolve = (stylelintConfig, prettierOptions = {}) => {
     debug('prettier %O', prettierOptions);
     debug('linter %O', stylelintConfig);
 
+    prettierOptions.parser = stylelintConfig.styleParser || "css";
+
     return [prettierOptions, stylelintConfig];
 };
 
